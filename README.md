@@ -34,7 +34,7 @@ node src/index.js
 
 ## Author
 
-* **Blog** - [Almeida Cavalcante](http://www.almeidacavalcante.com)
+* **Blog** - [Almeida Cavalcante](http://almeidacavalcante.com)
 
 ## License
 
