@@ -32,9 +32,8 @@ node src/index.js
 * [Express](https://expressjs.com/) - API Framework
 * [BodyParser](https://github.com/expressjs/body-parser/) - Body parsing middleware
 
-## Authors
+## Author
 
-* **Github** - *Initial work* - [Almeida Cavalcante](https://github.com/almeidacavalcante)
 * **Blog** - [Almeida Cavalcante](almeidacavalcante.com)
 
 ## License
