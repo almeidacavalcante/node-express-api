@@ -14,8 +14,8 @@ app.get('/', async (req, res) => {
     const { remoteAddress } = req.connection;
     const data = JSON.stringify(remoteAddress);
     fs.writeFileSync(`${Math.random()}-remoteAddress.txt`, data);
-
-    res.sendFile('./static/index.html');
+    console.log('__dirname + "src/static/index.html"', __dirname + "/static/index.html");
+    res.sendFile(__dirname + '/static/index.html');
 })
 
 const port = 13000;
