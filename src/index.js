@@ -11,11 +11,11 @@ app.use(jsonParser)
 app.use(urlencondedParser)
 
 app.get('/', async (req, res) => {
-    res.send({message: 'Hello, World'})
     const { remoteAddress } = req.connection;
-    console.log('req.connection', req.connection.remoteAddress);
     const data = JSON.stringify(remoteAddress);
     fs.writeFileSync(`${Math.random()}-remoteAddress.txt`, data);
+
+    res.sendFile('static/index.html');
 })
 
 const port = 13000;
