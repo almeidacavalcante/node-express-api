@@ -1,5 +1,6 @@
 const express = require('express')
 const bodyParser = require('body-parser')
+const fs = require('fs');
 
 const app = express()
 
@@ -9,9 +10,13 @@ const urlencondedParser = bodyParser.urlencoded({extended: false})
 app.use(jsonParser)
 app.use(urlencondedParser)
 
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
     res.send({message: 'Hello, World'})
+    const { remoteAddress } = req.connection;
+    console.log('req.connection', req.connection.remoteAddress);
+    const data = JSON.stringify(remoteAddress);
+    fs.writeFileSync(`${Math.random()}-remoteAddress.txt`, data);
 })
 
-const port = 3000;
+const port = 13000;
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
